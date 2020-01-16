@@ -43,9 +43,9 @@ createVennEuler <- function(topTabs, compNames, label = "selected", colFeat = "X
     
     ## Creating Venn Diagram
     if (venn) {
-        if (include=="") {titulo <- paste0("Venn diagram for comparison: \n", label, "\n(" , colPVal, " < ", pval," & abs(logFC) > ", FC, ") \n \n")}
-        if (include=="Up") {titulo <- paste0("Venn diagram for comparison: \n", label, "\nUp-regulated genes (" , colPVal, " < ", pval," & logFC > ", FC, ") \n \n")}
-        if (include=="Down") {titulo <- paste0("Venn diagram for comparison: \n", label, "\nDown-regulated genes (" , colPVal, " < ", pval," & logFC < -", FC, ") \n \n")}
+        if (include=="") {titulo <- paste0("Venn diagram for comparison: \n", label, "\n(" , colPVal, " < ", pval," & abs(logFC) > ", FC, ")")}
+        if (include=="Up") {titulo <- paste0("Venn diagram for comparison: \n", label, "\nUp-regulated genes (" , colPVal, " < ", pval," & logFC > ", FC, ")")}
+        if (include=="Down") {titulo <- paste0("Venn diagram for comparison: \n", label, "\nDown-regulated genes (" , colPVal, " < ", pval," & logFC < -", FC, ")")}
         venn.plot <- venn.diagram(list_genes_sel,
                                   category.names = compNames,
                                   fill = colors, 
@@ -57,7 +57,8 @@ createVennEuler <- function(topTabs, compNames, label = "selected", colFeat = "X
                                   main = titulo,
                                   filename = NULL,
                                   rotation.degree = rotation,
-                                  cat.pos = position)
+                                  cat.pos = position,
+                                 margin=c(0,2,0,0))
         if (pltPdf) {
             pdf(paste0("VennDiagram", include, ".",label, ".", colPVal, pval, ".logFC",FC,".pdf"))
             grid.draw(venn.plot)
