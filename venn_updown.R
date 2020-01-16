@@ -58,7 +58,7 @@ createVennEuler <- function(topTabs, compNames, label = "selected", colFeat = "X
                                   filename = NULL,
                                   rotation.degree = rotation,
                                   cat.pos = position,
-                                 margin=c(0,2,0,0))
+                                 margin=2)
         if (pltPdf) {
             pdf(paste0("VennDiagram", include, ".",label, ".", colPVal, pval, ".logFC",FC,".pdf"))
             grid.draw(venn.plot)
