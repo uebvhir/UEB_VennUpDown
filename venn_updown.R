@@ -43,9 +43,9 @@ createVennEuler <- function(topTabs, compNames, label = "selected", colFeat = "X
     
     ## Creating Venn Diagram
     if (venn) {
-        if (include=="") {titulo <- paste0("Venn diagram for comparison: \n", label, "\n(" , colPVal, " < ", pval," & abs(logFC) > ", FC, ") \n")}
-        if (include=="Up") {titulo <- paste0("Venn diagram for comparison: \n", label, "\nUp-regulated genes (" , colPVal, " < ", pval," & logFC > ", FC, ") \n")}
-        if (include=="Down") {titulo <- paste0("Venn diagram for comparison: \n", label, "\nDown-regulated genes (" , colPVal, " < ", pval," & logFC < -", FC, ") \n")}
+        if (include=="") {titulo <- paste0("Venn diagram for comparison: \n", label, "\n(" , colPVal, " < ", pval," & abs(logFC) > ", FC, ") \n ")}
+        if (include=="Up") {titulo <- paste0("Venn diagram for comparison: \n", label, "\nUp-regulated genes (" , colPVal, " < ", pval," & logFC > ", FC, ") \n ")}
+        if (include=="Down") {titulo <- paste0("Venn diagram for comparison: \n", label, "\nDown-regulated genes (" , colPVal, " < ", pval," & logFC < -", FC, ") \n ")}
         venn.plot <- venn.diagram(list_genes_sel,
                                   category.names = compNames,
                                   fill = colors, 
