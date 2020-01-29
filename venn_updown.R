@@ -34,7 +34,7 @@ createVennEuler <- function(topTabs, compNames, label = "selected", colFeat = "X
     ## Reading input data
     for (i in 1:length(topTabs)) {
         colpval <- which(names(topTabs[[i]]) == colPVal)
-        colFC <- which(names(res) == "log2FoldChange" | names(res) =="logFC")
+        colFC <- which(names(topTabs[[i]]) == "log2FoldChange" | names(topTabs[[i]]) =="logFC")
         colFeature <- which(names(topTabs[[i]]) == colFeat)
         if (include==""){list_genes_sel[[i]] <- as.character(topTabs[[i]][, colFeat][topTabs[[i]][, colpval] < pval & abs(topTabs[[i]][, colFC]) > FC])}
         if (include=="Up"){list_genes_sel[[i]] <- as.character(topTabs[[i]][, colFeat][topTabs[[i]][, colpval] < pval & topTabs[[i]][, colFC] > FC])}
